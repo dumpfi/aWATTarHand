@@ -11,7 +11,28 @@
             //Variabeln anlegen
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
             $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
+            
+            $Dayhelp = "Preis 0-1";
+            $Dayhelp2 = "Preis 0-1 Uhr";
 
+            //Variabeln Stunden Anlegen
+            for ($i = 0; $i < 48; $i++) {
+
+                if($i <24){
+
+                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
+                    $Dayhelp = "Preis " . $i - 1 . "-" . $i;
+                    $Dayhelp = "Preis " . $i - 1 . "-" . $i . "Uhr";
+
+                }else {
+
+                    $Dayhelp = "Preis+1 " . $i . "-" . $i +1;
+                    $Dayhelp = "Preis morgen " . $i . "-" . $i +1 . "Uhr";
+                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
+
+                }
+            }
+            
 
             //Timer Anlegen
             $this->RegisterTimer("UpdateaWATTarHand", 0, 'aWATTarPrices(' . $this->InstanceID . ');');
@@ -42,9 +63,10 @@
         public function aWATTarPrices() {
 
 
-            /** 
+            
             // Selbsterstellter Code
-    
+            
+            /*
             //API Abfrage aWATTar
     
             //URL Für aWATTar Schnitstellenabfrage aufbereiten
@@ -88,15 +110,20 @@
     
             //Api Verbindung schließen
             curl_close($ch);
+
+
     
             //echo 'geht' . "\n";
             //echo $url . "\n";
             //echo $decoded;
-
             */
-        
+
+            
+            /*KontrollCode
             $this->SetValue("datetoday", 123);
             $this->SetValue("datetomorow", 345);
+            */
+
             //Timer für jede Stunde setzen
             $next_timer = strtotime(date('Y-m-d H:00:10', strtotime('+1 hour')));
             $this->SetTimerInterval('UpdateaWATTarHand', ($next_timer - time()) * 1000);
