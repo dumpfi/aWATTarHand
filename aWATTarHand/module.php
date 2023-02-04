@@ -14,7 +14,7 @@
 
 
             //Timer Anlegen
-            $this->RegisterTimer("UpdateaWATTarHand", 0, $this->_getPrefix() . '_aWATTarPrices($_IPS[\'TARGET\']);');
+            $this->RegisterTimer("UpdateaWATTarHand", 0, $this->aWATTarPrices());
             $this->aWATTarPrices();
 
             //Timer für jede Stunde setzen
