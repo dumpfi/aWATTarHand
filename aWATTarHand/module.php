@@ -136,7 +136,7 @@
             if ($help == 48) {
                 $pricemerk = $decoded['data'][$i]['marketprice'];
                 $pricemerk = $pricemerk / 10;
-            } elseif($help == 24){
+            } elseif($help == 24 AND $i < 24){ 
                 $pricemerk = $decoded['data'][$i]['marketprice'];
                 $pricemerk = $pricemerk / 10;
             }
