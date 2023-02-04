@@ -136,37 +136,36 @@
                 $pricemerk = $pricemerk / 10;
 
 
-                //Bilden
-                for ($i = 0; $i < 48; $i++) {
+                
 
-                    if($i <24){
+                if($i <24){
 
-                        $b = $i + 1;
-                        $c = $i;
-                        if($b < 10){
-                            $b = "0" . $b;
-                        }
-                        if($c < 10){
-                            $c = "0" . $c;
-                        }
-                        $Dayhelp = "Preis_" . $c . "_" . $b;
-                        $this->SetValue($Dayhelp, $pricemerk);
-
-                    }else {
-
-                        $b = $i + 1 -24;
-                        $c = $i - 24;
-                        if($b < 10){
-                            $b = "0" . $b;
-                        }
-                        if($c < 10){
-                            $c = "0" . $c;
-                        }
-                        $Dayhelp = "Preism_" . $c . "_" . $b;
-                        $this->SetValue($Dayhelp, $pricemerk);
-
+                    $b = $i + 1;
+                    $c = $i;
+                    if($b < 10){
+                        $b = "0" . $b;
                     }
+                    if($c < 10){
+                        $c = "0" . $c;
+                    }
+                    $Dayhelp = "Preis_" . $c . "_" . $b;
+                    $this->SetValue($Dayhelp, $pricemerk);
+
+                }else {
+
+                    $b = $i + 1 -24;
+                    $c = $i - 24;
+                    if($b < 10){
+                        $b = "0" . $b;
+                    }
+                    if($c < 10){
+                        $c = "0" . $c;
+                    }
+                    $Dayhelp = "Preism_" . $c . "_" . $b;
+                    $this->SetValue($Dayhelp, $pricemerk);
+
                 }
+                
 
 
 
