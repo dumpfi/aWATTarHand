@@ -22,15 +22,15 @@
 
                     $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
                     $b = $i - 1;
-                    $Dayhelp = 'Preis ' . $b . $i;
-                    $Dayhelp = 'Preis ' . $b . '-' . $i . 'Uhr';
+                    $Dayhelp = "Preis" . $b . $i;
+                    $Dayhelp = "Preis " . $b . '-' . $i . "Uhr";
 
                 }else {
 
                     $b = $i + 1 -24;
                     $c = $i - 24;
-                    $Dayhelp = 'Preis+1 ' . $c . $b;
-                    $Dayhelp = 'Preis morgen ' . $c . '-' . $b . 'Uhr';
+                    $Dayhelp = "Preism" . $c . $b;
+                    $Dayhelp = "Preis morgen " . $c . '-' . $b . "Uhr";
                     $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
 
                 }
