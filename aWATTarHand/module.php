@@ -12,6 +12,8 @@
             //Variabeln anlegen
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
             $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
+
+            $this->RegisterProfile(VARIABLETYPE_FLOAT, 'kWhCent', '','' , ' ct/kWh', '0', '0', '0', '2');
             
             //$Dayhelp = "Preis_0_1";
             //$Dayhelp2 = "Preis 0-1 Uhr";
