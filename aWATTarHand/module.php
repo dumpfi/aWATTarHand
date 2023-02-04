@@ -8,8 +8,18 @@
             // Diese Zeile nicht löschen.
             parent::Create();
 
+            //Variabeln anlegen
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
             $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
+
+
+            //Timer Anlegen
+            $this->RegisterTimer("UpdateaWATTarHand", 0, $this->_getPrefix() . '_aWATTarPrices($_IPS[\'TARGET\']);');
+            $this->aWATTarPrices();
+
+            //Timer für jede Stunde setzen
+            //$next_timer = strtotime(date('Y-m-d H:00:10', strtotime('+1 hour')));
+            //$this->SetTimerInterval('UpdateData', ($next_timer - time()) * 1000);
 
         }
 
@@ -29,7 +39,10 @@
         */
 
 
-        public function MeineErsteEigeneFunktion() {
+        public function aWATTarPrices() {
+
+
+            /** 
             // Selbsterstellter Code
     
             //API Abfrage aWATTar
@@ -79,6 +92,17 @@
             //echo 'geht' . "\n";
             //echo $url . "\n";
             //echo $decoded;
+
+            */
+
+            $this->SetValueInteger("datetoday", 123);
+            $this->SetValueInteger("datetomorow", 345);
+            //Timer für jede Stunde setzen
+            $next_timer = strtotime(date('Y-m-d H:00:10', strtotime('+1 hour')));
+            $this->SetTimerInterval('UpdateData', ($next_timer - time()) * 1000);
+
+
+
         }
         
     }
