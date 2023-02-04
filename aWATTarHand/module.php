@@ -21,13 +21,15 @@
                 if($i <24){
 
                     $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
-                    $Dayhelp = "Preis " . $i - 1 . "-" . $i;
-                    $Dayhelp = "Preis " . $i - 1 . "-" . $i . "Uhr";
+                    $b = $i - 1;
+                    $Dayhelp = 'Preis ' . $b . '-' . $i;
+                    $Dayhelp = 'Preis ' . $b . '-' . $i . 'Uhr';
 
                 }else {
 
-                    $Dayhelp = "Preis+1 " . $i . "-" . $i +1;
-                    $Dayhelp = "Preis morgen " . $i . "-" . $i +1 . "Uhr";
+                    $b = $i + 1;
+                    $Dayhelp = 'Preis+1 ' . $i . '-' . $b;
+                    $Dayhelp = 'Preis morgen ' . $i . '-' . $b . 'Uhr';
                     $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
 
                 }
