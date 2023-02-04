@@ -14,7 +14,7 @@
 
 
             //Timer Anlegen
-            $this->RegisterTimer("UpdateaWATTarHand", 0, 'aWATTarPrices(' . $this->InstanceID . ')');
+            $this->RegisterTimer("UpdateaWATTarHand", 0, 'aWATTarPrices(' . $this->InstanceID . ');');
             $this->aWATTarPrices();
 
             //Timer für jede Stunde setzen
