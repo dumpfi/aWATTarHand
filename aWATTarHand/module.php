@@ -94,9 +94,9 @@
             //echo $decoded;
 
             */
-
-            $this->SetValueInteger("datetoday", 123);
-            $this->SetValueInteger("datetomorow", 345);
+        
+            $this->SetValue("datetoday", 123);
+            $this->SetValue("datetomorow", 345);
             //Timer für jede Stunde setzen
             $next_timer = strtotime(date('Y-m-d H:00:10', strtotime('+1 hour')));
             $this->SetTimerInterval('UpdateaWATTarHand', ($next_timer - time()) * 1000);
