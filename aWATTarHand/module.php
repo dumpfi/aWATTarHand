@@ -3,6 +3,7 @@
     //Klassendefinition
     class aWATTarHand extends IPSModule {
 
+
         public function Create(){
             
             // Diese Zeile nicht löschen.
@@ -44,7 +45,7 @@
                     }
                     $Dayhelp = "Preism_" . $c . "_" . $b;
                     $Dayhelp2 = "Preis morgen " . $c . "-" . $b . "Uhr";
-                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
+                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2, "kWhCent");
 
                 }
             }
