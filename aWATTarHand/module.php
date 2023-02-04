@@ -82,7 +82,7 @@
             
             // Selbsterstellter Code
             
-            /*
+            
             //API Abfrage aWATTar
     
             //URL Für aWATTar Schnitstellenabfrage aufbereiten
@@ -98,10 +98,12 @@
             if ($timestamp1 >= $merkertime1) {
     
                 $urlpart4 = (strtotime(date('d.m.Y 00:00:00')) + 172800) * 1000;
+                $help = 48;
     
             } else {
     
                 $urlpart4 = (strtotime(date('d.m.Y 00:00:00')) + 86400) * 1000;
+                $help = 24;
     
             }
     
@@ -127,12 +129,56 @@
             //Api Verbindung schließen
             curl_close($ch);
 
+            //Ausgabe und Setzen Variabeln
+            for($i = 0; $i < $help; $i++){
+
+                $pricemerk = $decoded['data'][$i]['marketprice'];
+                $pricemerk = $pricemerk / 10;
+
+
+                //Bilden
+                for ($i = 0; $i < 48; $i++) {
+
+                    if($i <24){
+
+                        $b = $i + 1;
+                        $c = $i;
+                        if($b < 10){
+                            $b = "0" . $b;
+                        }
+                        if($c < 10){
+                            $c = "0" . $c;
+                        }
+                        $Dayhelp = "Preis_" . $c . "_" . $b;
+                        $this->SetValue($Dayhelp, $pricemerk);
+
+                    }else {
+
+                        $b = $i + 1 -24;
+                        $c = $i - 24;
+                        if($b < 10){
+                            $b = "0" . $b;
+                        }
+                        if($c < 10){
+                            $c = "0" . $c;
+                        }
+                        $Dayhelp = "Preism_" . $c . "_" . $b;
+                        $this->SetValue($Dayhelp, $pricemerk);
+
+                    }
+                }
+
+
+
+            
+            }
+
 
     
             //echo 'geht' . "\n";
             //echo $url . "\n";
             //echo $decoded;
-            */
+            
 
             
             /*KontrollCode
