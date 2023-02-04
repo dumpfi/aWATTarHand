@@ -13,7 +13,7 @@
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
             $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
 
-            $this->RegisterProfile(VARIABLETYPE_FLOAT, 'kWhCent', '','' , ' ct/kWh', '0', '0', '0', '2');
+            $this->RegisterProfileFloat(VARIABLETYPE_FLOAT, 'kWhCent', '','' , ' ct/kWh', '0', '0', '0', '2');
             
             //$Dayhelp = "Preis_0_1";
             //$Dayhelp2 = "Preis 0-1 Uhr";
@@ -61,6 +61,12 @@
             //$next_timer = strtotime(date('Y-m-d H:00:10', strtotime('+1 hour')));
             //$this->SetTimerInterval('UpdateData', ($next_timer - time()) * 1000);
 
+        }
+
+        //FunktionProfile erstellen
+        protected function RegisterProfileFloat($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
+        {
+            $this->RegisterProfile(VARIABLETYPE_FLOAT, $Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits);
         }
 
 
