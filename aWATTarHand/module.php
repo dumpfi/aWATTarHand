@@ -133,8 +133,13 @@
             //Ausgabe und Setzen Variabeln
             for($i = 0; $i < 48; $i++){
 
+            if ($help = 48) {
                 $pricemerk = $decoded['data'][$i]['marketprice'];
                 $pricemerk = $pricemerk / 10;
+            } elseif($help = 24){
+                $pricemerk = $decoded['data'][$i]['marketprice'];
+                $pricemerk = $pricemerk / 10;
+            }
 
 
                 
