@@ -31,7 +31,7 @@
                     }
                     $Dayhelp = "Preis_" . $c . "_" . $b;
                     $Dayhelp2 = "Preis " . $c . "-" . $b . "Uhr";
-                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
+                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2, "kWhCent");
 
                 }else {
 
@@ -131,7 +131,7 @@
             curl_close($ch);
 
             //Ausgabe und Setzen Variabeln
-            for($i = 0; $i < $help; $i++){
+            for($i = 0; $i < 48; $i++){
 
                 $pricemerk = $decoded['data'][$i]['marketprice'];
                 $pricemerk = $pricemerk / 10;
@@ -154,16 +154,30 @@
 
                 }else {
 
-                    $b = $i + 1 -24;
-                    $c = $i - 24;
-                    if($b < 10){
-                        $b = "0" . $b;
+                    if ($help = 48) {
+                        $b = $i + 1 - 24;
+                        $c = $i - 24;
+                        if ($b < 10) {
+                            $b = "0" . $b;
+                        }
+                        if ($c < 10) {
+                            $c = "0" . $c;
+                        }
+                        $Dayhelp = "Preism_" . $c . "_" . $b;
+                        $this->SetValue($Dayhelp, $pricemerk);
+                    } elseif($help = 24){
+                        $b = $i + 1;
+                        $c = $i;
+                        if ($b < 10) {
+                            $b = "0" . $b;
+                        }
+                        if ($c < 10) {
+                            $c = "0" . $c;
+                        }
+                        $Dayhelp = "Preism_" . $c . "_" . $b;
+                        $this->SetValue($Dayhelp, "0");
+
                     }
-                    if($c < 10){
-                        $c = "0" . $c;
-                    }
-                    $Dayhelp = "Preism_" . $c . "_" . $b;
-                    $this->SetValue($Dayhelp, $pricemerk);
 
                 }
                 
