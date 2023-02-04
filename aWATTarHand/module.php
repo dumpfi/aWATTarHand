@@ -133,10 +133,10 @@
             //Ausgabe und Setzen Variabeln
             for($i = 0; $i < 48; $i++){
 
-            if ($help = 48) {
+            if ($help == 48) {
                 $pricemerk = $decoded['data'][$i]['marketprice'];
                 $pricemerk = $pricemerk / 10;
-            } elseif($help = 24){
+            } elseif($help == 24){
                 $pricemerk = $decoded['data'][$i]['marketprice'];
                 $pricemerk = $pricemerk / 10;
             }
@@ -159,7 +159,7 @@
 
                 }else {
 
-                    if ($help = 48) {
+                    if ($help == 48) {
                         $b = $i + 1 - 24;
                         $c = $i - 24;
                         if ($b < 10) {
@@ -170,7 +170,7 @@
                         }
                         $Dayhelp = "Preism_" . $c . "_" . $b;
                         $this->SetValue($Dayhelp, $pricemerk);
-                    } elseif($help = 24){
+                    } elseif($help == 24){
                         $b = $i + 1;
                         $c = $i;
                         if ($b < 10) {
