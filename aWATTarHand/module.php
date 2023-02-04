@@ -14,7 +14,7 @@
 
 
             //Timer Anlegen
-            $this->RegisterTimer("UpdateaWATTarHand", 0, $this->aWATTarPrices());
+            $this->RegisterTimer("UpdateaWATTarHand", 0, 'aWATTarPrices(' . $this->InstanceID . ')');
             $this->aWATTarPrices();
 
             //Timer für jede Stunde setzen
@@ -99,7 +99,7 @@
             $this->SetValueInteger("datetomorow", 345);
             //Timer für jede Stunde setzen
             $next_timer = strtotime(date('Y-m-d H:00:10', strtotime('+1 hour')));
-            $this->SetTimerInterval('UpdateData', ($next_timer - time()) * 1000);
+            $this->SetTimerInterval('UpdateaWATTarHand', ($next_timer - time()) * 1000);
 
 
 
