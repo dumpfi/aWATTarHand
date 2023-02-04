@@ -171,8 +171,8 @@
                         $Dayhelp = "Preism_" . $c . "_" . $b;
                         $this->SetValue($Dayhelp, $pricemerk);
                     } elseif($help == 24){
-                        $b = $i + 1;
-                        $c = $i;
+                        $b = $i + 1 - 24;
+                        $c = $i- 24;
                         if ($b < 10) {
                             $b = "0" . $b;
                         }
