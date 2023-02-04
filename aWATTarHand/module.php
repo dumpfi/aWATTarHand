@@ -12,18 +12,18 @@
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
             $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
             
-            $Dayhelp = "Preis_0_1";
-            $Dayhelp2 = "Preis 0-1 Uhr";
+            //$Dayhelp = "Preis_0_1";
+            //$Dayhelp2 = "Preis 0-1 Uhr";
 
             //Variabeln Stunden Anlegen
             for ($i = 0; $i < 48; $i++) {
 
                 if($i <24){
 
+                    $b = $i + 1;
+                    $Dayhelp = "Preis_" . $i . "_" . $b;
+                    $Dayhelp2 = "Preis " . $i . "-" . $b . "Uhr";
                     $this->RegisterVariableFloat($Dayhelp, $Dayhelp2);
-                    $b = $i - 1;
-                    $Dayhelp = "Preis_" . $b . "_" . $i;
-                    $Dayhelp2 = "Preis " . $b . "-" . $i . "Uhr";
 
                 }else {
 
