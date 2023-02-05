@@ -4,8 +4,8 @@
     [
         {
             "type": "Button",
-            "label": "Update Manuell",
-            "onClick": "aWATTarHand_UpdateManually();"
+            "label": "Update",
+            "onClick": "aWATTarHand_UpdateManually($id);"
           }
     ]
 }
