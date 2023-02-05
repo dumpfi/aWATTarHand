@@ -13,11 +13,11 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             parent::Create();
 
             //Profil Anlegen
-            $this->RegisterProfileFloat('ctkWh', '', '', ' ct/kWh', '0', '0', '0', '2');
+            $this->RegisterProfileFloat('aWATTarHand_kWhCent', '', '', ' ct/kWh', '0', '0', '0', '2');
 
             //Variabeln anlegen
-            $this->RegisterVariableInteger("datetoday", "Datum Heute");
-            $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
+            $this->RegisterVariableInteger("datetoday", "Datum Heute", "~UnixTimestampDate");
+            $this->RegisterVariableInteger("datetomorow", "Datum Morgen", "~UnixTimestampDate");
 
             //$this->RegisterProfileFloat(VARIABLETYPE_FLOAT, 'kWhCent', '','' , ' ct/kWh', '0', '0', '0', '2');
             
@@ -39,7 +39,7 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
                     }
                     $Dayhelp = "Preis_" . $c . "_" . $b;
                     $Dayhelp2 = "Preis " . $c . "-" . $b . "Uhr";
-                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2, "kWhCent");
+                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2, "aWATTarHand_kWhCent");
 
                 }else {
 
@@ -53,7 +53,7 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
                     }
                     $Dayhelp = "Preism_" . $c . "_" . $b;
                     $Dayhelp2 = "Preis morgen " . $c . "-" . $b . "Uhr";
-                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2, "kWhCent");
+                    $this->RegisterVariableFloat($Dayhelp, $Dayhelp2, "aWATTarHand_kWhCent");
 
                 }
             }
