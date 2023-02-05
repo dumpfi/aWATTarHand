@@ -164,10 +164,10 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             $this->SetValue("datetomorow", strtotime(date('d.m.Y 00:00:00')) + 86400);
            
             //PreisMerker
-            $price1m = 0;
-            $price2m = 0;
-            $price1hm = 0;
-            $price2hm = 0;
+            $price1m = 99999999999;
+            $price2m = 99999999999;
+            $price1hm = 99999999999;
+            $price2hm = 99999999999;
             
 
             //Ausgabe und Setzen Variabeln
