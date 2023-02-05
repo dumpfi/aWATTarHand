@@ -61,8 +61,8 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             //Variablen Für Prisvergleich
             $this->RegisterVariableString("day1cheap1t", "Günstigster Preis Zeit D1");
             $this->RegisterVariableFloat("day1cheap1p", "Günstigster Preis D1", "aWATTarHand_kWhCent");
-            $this->RegisterVariableString("day1cheap2t", "Günstigster Preis Zeit D2");
-            $this->RegisterVariableFloat("day1cheap2p", "Günstigster Preis D2", "aWATTarHand_kWhCent");
+            $this->RegisterVariableString("day2cheap2t", "Günstigster Preis Zeit D2");
+            $this->RegisterVariableFloat("day2cheap2p", "Günstigster Preis D2", "aWATTarHand_kWhCent");
             
 
             //Timer Anlegen
@@ -241,8 +241,8 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             //Günstigster Wert
             $this->SetValue("day1cheap1t", $price1hm);
             $this->SetValue("day1cheap1p", $price1m);
-            $this->SetValue("day1cheap2t", $price2hm);
-            $this->SetValue("day1cheap2p", $price2m);
+            $this->SetValue("day2cheap2t", $price2hm);
+            $this->SetValue("day2cheap2p", $price2m);
     
             //echo 'geht' . "\n";
             //echo $url . "\n";
