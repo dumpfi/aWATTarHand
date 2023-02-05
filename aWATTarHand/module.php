@@ -145,6 +145,9 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             //Api Verbindung schließen
             curl_close($ch);
 
+            $this->SetValue("datetoday", strtotime(date('d.m.Y 00:00:00')));
+            $this->SetValue("datetomorow", strtotime(date('d.m.Y 00:00:00')) + 86400);
+
             //Ausgabe und Setzen Variabeln
             for($i = 0; $i < 48; $i++){
 
