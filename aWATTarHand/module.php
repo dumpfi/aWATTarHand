@@ -3,11 +3,15 @@
     //Klassendefinition
     class aWATTarHand extends IPSModule {
 
+        use VariableProfile;
 
         public function Create(){
             
             // Diese Zeile nicht löschen.
             parent::Create();
+
+            //Profil Anlegen
+        $this->RegisterProfileFloat('ctkWh', '', '', ' ct/kWh', '0', '0', '0', '2');
 
             //Variabeln anlegen
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
@@ -62,12 +66,13 @@
             //$this->SetTimerInterval('UpdateData', ($next_timer - time()) * 1000);
 
         }
-
+        /*
         //FunktionProfile erstellen
         protected function RegisterProfileFloat($Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits)
         {
             $this->RegisterProfile(VARIABLETYPE_FLOAT, $Name, $Icon, $Prefix, $Suffix, $MinValue, $MaxValue, $StepSize, $Digits);
         }
+        */
 
 
         // Überschreibt die intere IPS_ApplyChanges($id) Funktion
