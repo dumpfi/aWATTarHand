@@ -57,6 +57,12 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
 
                 }
             }
+
+            //Variablen Für Prisvergleich
+            $this->RegisterVariableString("day1cheap1t", "Günstigster Preis Zeit D1");
+            $this->RegisterVariableFloat("day1cheap1p", "Günstigster Preis D1", "aWATTarHand_kWhCent");
+            $this->RegisterVariableString("day1cheap2t", "Günstigster Preis Zeit D2");
+            $this->RegisterVariableFloat("day1cheap2p", "Günstigster Preis D2", "aWATTarHand_kWhCent");
             
 
             //Timer Anlegen
@@ -147,17 +153,21 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
 
             $this->SetValue("datetoday", strtotime(date('d.m.Y 00:00:00')));
             $this->SetValue("datetomorow", strtotime(date('d.m.Y 00:00:00')) + 86400);
+           
+            //PreisMerker
+            $price1m = 0;
+            $price2m = 0;
 
             //Ausgabe und Setzen Variabeln
             for($i = 0; $i < 48; $i++){
 
-            if ($help == 48) {
-                $pricemerk = $decoded['data'][$i]['marketprice'];
-                $pricemerk = $pricemerk / 10;
-            } elseif($help == 24 AND $i < 24){ 
-                $pricemerk = $decoded['data'][$i]['marketprice'];
-                $pricemerk = $pricemerk / 10;
-            }
+                if ($help == 48) {
+                    $pricemerk = $decoded['data'][$i]['marketprice'];
+                    $pricemerk = $pricemerk / 10;
+                } elseif($help == 24 AND $i < 24){ 
+                    $pricemerk = $decoded['data'][$i]['marketprice'];
+                    $pricemerk = $pricemerk / 10;
+                }
 
 
                 
@@ -174,6 +184,13 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
                     }
                     $Dayhelp = "Preis_" . $c . "_" . $b;
                     $this->SetValue($Dayhelp, $pricemerk);
+                    $price1 = $pricemerk;
+                    if($price1 < $price1m){
+
+                        $price1m = $price1;
+                        $price1hm = $c . "-" . $b;
+
+                    }
 
                 }else {
 
@@ -188,6 +205,14 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
                         }
                         $Dayhelp = "Preism_" . $c . "_" . $b;
                         $this->SetValue($Dayhelp, $pricemerk);
+                        $price2 = $pricemerk;
+                        if($price2 < $price2m){
+
+                            $price2m = $price2;
+                            $price2hm = $c . "-" . $b;
+    
+                        }
+
                     } elseif($help == 24){
                         $b = $i + 1 - 24;
                         $c = $i- 24;
@@ -199,6 +224,8 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
                         }
                         $Dayhelp = "Preism_" . $c . "_" . $b;
                         $this->SetValue($Dayhelp, "0");
+                        $price2m = 0;
+                        $price2hm = 0;
 
                     }
 
@@ -209,8 +236,13 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
 
             
             }
+            
 
-
+            //Günstigster Wert
+            $this->SetValue("day1cheap1t", $price1hm);
+            $this->SetValue("day1cheap1p", $price1m);
+            $this->SetValue("day1cheap2t", $price2hm);
+            $this->SetValue("day1cheap2p", $price2m);
     
             //echo 'geht' . "\n";
             //echo $url . "\n";
