@@ -98,6 +98,15 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
         */
 
 
+        /**
+         * Update manually via instance button
+         */
+        public function UpdateManually()
+        {
+            $this->aWATTarPrices();
+        }
+
+
         public function aWATTarPrices() {
 
 
