@@ -157,6 +157,8 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             //PreisMerker
             $price1m = 0;
             $price2m = 0;
+            $price1hm = 0;
+            $price2hm = 0;
 
             //Ausgabe und Setzen Variabeln
             for($i = 0; $i < 48; $i++){
