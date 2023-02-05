@@ -3,7 +3,7 @@
     //Klassendefinition
     class aWATTarHand extends IPSModule {
 
-        use VariableProfile;
+        use Semaphore, VariableProfile;
 
         public function Create(){
             
@@ -11,13 +11,13 @@
             parent::Create();
 
             //Profil Anlegen
-        $this->RegisterProfileFloat('ctkWh', '', '', ' ct/kWh', '0', '0', '0', '2');
+            $this->RegisterProfileFloat('ctkWh', '', '', ' ct/kWh', '0', '0', '0', '2');
 
             //Variabeln anlegen
             $this->RegisterVariableInteger("datetoday", "Datum Heute");
             $this->RegisterVariableInteger("datetomorow", "Datum Morgen");
 
-            $this->RegisterProfileFloat(VARIABLETYPE_FLOAT, 'kWhCent', '','' , ' ct/kWh', '0', '0', '0', '2');
+            //$this->RegisterProfileFloat(VARIABLETYPE_FLOAT, 'kWhCent', '','' , ' ct/kWh', '0', '0', '0', '2');
             
             //$Dayhelp = "Preis_0_1";
             //$Dayhelp2 = "Preis 0-1 Uhr";
