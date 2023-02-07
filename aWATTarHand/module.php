@@ -66,7 +66,7 @@ require_once(__DIR__ . "./../libs/BGETechTraits.php");  // diverse Klassen
             
 
             //Timer Anlegen
-            $this->RegisterTimer("UpdateaWATTarHand", 0, 'aWATTarPrices(' . $this->InstanceID . ');');
+            $this->RegisterTimer("UpdateaWATTarHand", 0, 'aWATTar_aWATTarPrices(' . $this->InstanceID . ');');
             $this->aWATTarPrices();
 
             //Timer für jede Stunde setzen
